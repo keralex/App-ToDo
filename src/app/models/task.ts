@@ -1,11 +1,13 @@
 export class Task {
-    id:number;
-    tittle:string='';
-    complete:boolean=false;
+    id: number;
+    tittle: string='';
+    complete: boolean=false;
 
 
-    constructor(values:Object={}){
-        Object.assign(this,values);
+    constructor(id: number, tittle: string, complete: boolean){
+        this.id = id;
+        this.tittle = tittle;
+        this.complete = complete;
     }
 }
 
