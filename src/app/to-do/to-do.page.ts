@@ -30,5 +30,8 @@ export class ToDoPage implements OnInit {
       this.tasks = tasks;
     });
   }
+  deleteTask(task:Task){
+    this.todoservice.deleteTask(task);
+  }
 
 }

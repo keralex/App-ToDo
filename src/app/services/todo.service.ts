@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Task } from './../models/task';
-import { of, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +23,18 @@ export class TodoService {
 
   getTasks(): Observable<Task[]> {
     return of(this.tasks);
-    
-  }
 
+  }
+  //getAtask
+  getTask(id: number) {
+   return this.tasks.filter(task => task.id === id);
+  }
+  // delete the taks
+
+  deleteTask(task: Task) {
+
+    this.tasks.splice(this.tasks.indexOf(task), 1);
+
+  }
 
 }
