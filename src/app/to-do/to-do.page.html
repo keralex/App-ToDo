@@ -15,6 +15,13 @@
     <ion-item>
       <ion-label>{{task.tittle}}</ion-label>
     </ion-item>
+    <ion-item-options side="start">
+      <button ion-button (click)="checkTask(task.id)">check</button>
+    </ion-item-options>
+
+    <ion-item-options side="end">
+      <button ion-button (click)="deleteTask(task.id)">delete</button>
+    </ion-item-options>
   </ion-item-sliding>
  
     <ion-item>

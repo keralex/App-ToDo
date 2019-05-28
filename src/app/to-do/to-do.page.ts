@@ -30,8 +30,11 @@ export class ToDoPage implements OnInit {
       this.tasks = tasks;
     });
   }
-  deleteTask(task:Task){
-    this.todoservice.deleteTask(task);
+  deleteTask(id: number) {
+    this.todoservice.deleteTask(this.todoservice.getTask(id));
+  }
+  checkTask(id: number) {
+    this.todoservice.checkTask(this.todoservice.getTask(id));
   }
 
 }

@@ -27,14 +27,24 @@ export class TodoService {
   }
   //getAtask
   getTask(id: number) {
-   return this.tasks.filter(task => task.id === id);
+    return this.tasks.find(task => task.id === id);
   }
   // delete the taks
 
   deleteTask(task: Task) {
 
     this.tasks.splice(this.tasks.indexOf(task), 1);
+  }
 
+  checkTask(task: Task) {
+    if (task.complete === true) {
+      this.tasks.find(todo => todo.id === task.id).complete = false;
+      console.log(this.tasks);
+    }
+    else {
+      this.tasks.find(todo => todo.id === task.id).complete = true;
+      console.log(this.tasks);
+    }
   }
 
 }
